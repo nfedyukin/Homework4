@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/classes/Uploader.php";
+require_once __DIR__ . '/classes/Uploader.php';
 
 $img_folder = __DIR__ . '/img/';
 
@@ -27,7 +27,7 @@ $getImgList = function ($img_folder)
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="style.css" rel="stylesheet">
-    <title>Задание 3</title>
+    <title>Задание 2</title>
     <style>
         .button {
             background-color: #4CAF50; /* Green */

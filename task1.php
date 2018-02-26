@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/classes/GuestBook.php";
+require_once __DIR__ . '/classes/GuestBook.php';
 
 $file_comments = __DIR__ . '/data/comments.txt';
 
@@ -16,8 +16,8 @@ if(isset($_POST['comment'])){
     // и метод save сохраняет массив в файл. Такой вызов методов "по цепочке" возможен,
     //т.к. метод append() возвращает объект экземпляра класса (return $this).
     $gb->append(PHP_EOL . str_replace(PHP_EOL, ' ',$_POST['comment']))->save();
-
-    $comments = $gb->GetData();
+    header('Location: /Homework4/index.html');
+    //$comments = $gb->GetData();
 }
 ?>
 
@@ -32,7 +32,7 @@ if(isset($_POST['comment'])){
     <title>Задание 2</title>
 </head>
 <body>
-<h1>Задание №2</h1>
+<h1>Задание №1</h1>
 <h2>Гостевая книга</h2>
 
 <?php

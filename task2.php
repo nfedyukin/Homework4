@@ -1,21 +1,10 @@
 <?php
 
-require_once __DIR__ . '/classes/Uploader.php';
-
-$img_folder = __DIR__ . '/img/';
-
-$uploader = new Uploader('image');
+require_once __DIR__ . '/class/Uploader.php';
+require_once __DIR__ . '/functions.php';
 
 
-if ($uploader->isUploaded()){
-    $uploader->upload($img_folder);
-
-}
-
-$getImgList = function ($img_folder)
-{
-    return preg_grep('~\.(jpeg|jpg|png)$~',array_slice(scandir($img_folder), 2));
-}
+    $img_folder = __DIR__ . '/img/';
 
 ?>
 
@@ -30,7 +19,7 @@ $getImgList = function ($img_folder)
     <title>Задание 2</title>
     <style>
         .button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             border: none;
             color: white;
             padding: 16px 32px;
@@ -39,7 +28,7 @@ $getImgList = function ($img_folder)
             display: inline-block;
             font-size: 12px;
             margin: 4px 2px;
-            -webkit-transition-duration: 0.4s; /* Safari */
+            -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
             cursor: pointer;
         }
@@ -62,7 +51,7 @@ $getImgList = function ($img_folder)
 <h1>Задание №2</h1>
 <h2>Фотогалерея</h2>
 <div style="width: 300px">
-    <form style="border: 2px solid #4CAF50" method="post" enctype="multipart/form-data" >
+    <form style="border: 2px solid #4CAF50" method="post" action="/Homework4/uploadimage.php" enctype="multipart/form-data" >
         <!--<input type="hidden" name="MAX_FILE_SIZE" value="1000">-->
         <h3 style="margin-left: 10px">Добавить рисунок(jpeg, png): </h3>
         <input type="button" style="margin-left: 10px" class="button button1" id="loadFile" value="1. Выбрать рисунок" onclick="document.getElementById('image').click();" />
@@ -76,7 +65,7 @@ $getImgList = function ($img_folder)
 <?php
 
 
-$img_list = $getImgList($img_folder);
+$img_list = getImageList($img_folder);
 //var_dump($img_list);
 
 foreach ($img_list as $image){

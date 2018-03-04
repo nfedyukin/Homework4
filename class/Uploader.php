@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Nikolay
- * Date: 25.02.2018
- * Time: 22:49
- */
 class Uploader
 {
     protected $field_name;
@@ -20,7 +14,7 @@ class Uploader
     {
         if (isset($_FILES[$this->field_name])){
             if(0 == $_FILES[$this->field_name]['error']){
-                return true;
+                return is_uploaded_file($_FILES[$this->field_name]['tmp_name']);
             }
         }
         return false;

@@ -2,10 +2,10 @@
 
 require_once __DIR__ . '/class/GuestBook.php';
 
-$file_comments = __DIR__ . '/data/comments.txt';
+//$file_comments = __DIR__ . '/data/comments.txt';
 
 //Создаем экземпляр класса GuestBook
-$gb = new GuestBook($file_comments);
+$gb = new GuestBook();
 
 //Метод GetData() ввозвращает массив комментариев
 $comments = $gb->getData();
